@@ -1,0 +1,128 @@
+1.Borrar una sola letra: x
+
+2.Borrar una palabra completa:  dw
+
+3.Borrado hasta el final de la linea desde donde me encuentro: d$
+
+4.Movimiento palabra por palabra:
+
+	-hacia adelante principio de palabra:  w
+	-hacia atras principio de la palabra   b
+	-hacia adelante final de la palabra:   e
+
+5. Movimiento al final de linea: $
+
+6. Movimiento al principio de linea: 0
+
+7. Borrar conjunto de palabras: d [numero de palabras] [objetos]
+		
+		DONDE: Una lista corta de objetos:
+  				 w - desde el cursor hasta el final de la palabra, incluyendo el espacio.
+   				 e - desde el cursor hasta el final de la palabra, SIN incluir el espacio.
+                 		 $ - desde el cursor hasta el final de la línea.
+
+8. Borrar N cantidad de lineas hacia abajo:
+
+				-una linea:   dd
+				-dos lineas:  2dd
+				-tres lineas: 3dd
+				-asi sucesivamente 4dd, 5dd, 6dd, ... [n]dd
+
+9. Deshacer cambios:
+	-Deshacer los ultimos cambios (paso a paso): 	u
+	-Deshace todos los cambio hechos a un line completa:	U
+
+10. Si deshice algo y me arrepiento, puedo volver a ultimo estado usando: CTRL+R
+
+11. Pegar linea debajo usando put: p
+
+	- primero copiar con "dd" y luego pegar debajo de la linea que quiera usano "p"
+
+12. Reemplazar una letra (sin usar el modo INSERT y la tecla borrar): r
+
+13. Cambiar palabras o parte de ella usando comando change: cw
+
+14. cambiar N cantidad de palabras:
+
+	-cambiar hasta el final de lines:  c$
+	-cambiar hasta la proxima palabra: cw
+	-cambiar 10 las palabras siguientes: c10w
+	-cambiar las 10 palabras siguientes hasta el final de la palabra 10: c10e
+
+15.Situacion en el fichero y su estado:
+	-Pulse CTRL+g para mostrar su situacion en el fichero y su estado
+	-Memorizar la linea donde se encuentra actualmente.
+	-Ir a cualquier otra parte el codigo.
+	-Escribir el numero de lineas que me habia memorizado y luego ejecutar MAYUS+G 
+
+16.Buscar con comando search: /[patron]
+	
+	-ingresar la barra "/" seguido del patron de busqueda.
+	-presionar "n" para repetir busqueda y recorrer todos los patrones hallados.
+
+17. Busqueda para comprobar parentesis:
+	-pararse sobre cualquier (,[ o { y presionar "%"
+
+18. Modificar Errores en un codigo fuente:
+	-Para cambiar viejo por nuevo en un linea pulse: ":s/viejo/nuevo"
+	-Para cambiar todos los viejos por nuevo en una linse pulse: ":s/viejo/nuevo/g" 
+	-Para cambiar frases entre dos numeros de lineas pulse: ":#,#s/viejo/nuevo/g" , Donde #,# son los numeros de las dos lineas.
+	-Para cambiar viejo por nuevo en todo el archivo pulse: ":%s/viejo/nuevo/g"
+	-Para pedir confirmacion en cada caso agregar una 'c': ":%s/viejo/nuevo/gc" 	
+
+19. Ejecutar un comando externo:
+	-escriba :! seguido del comando que se quiere ejecutar   :![command]
+	 Ejemplo: :!ls
+
+20. Guardado de archivos:
+	- :w NOMBRE_DEL_ARCHIVO (si no existe el fichero, Vim lo crea)
+	- :wall guardar todos los archivos modificados (si editamos mas de uno)
+	
+	MODOS DE GUARDAR CAMBIOS Y SALIR:
+
+	1. guardar cambios en el archivo actual :w
+	2. guardar cambios en todos los archivos abiertos :wall
+	3. guardar cambios en el archivo actual y salir :wq!
+	4. cerrar archivo actual sin guardar nada :q!
+	5. cerrar todo sin guardar nada: qall!
+
+21. Guardar solo una parte de mi archivo en un Buffer:
+	- para guardar solamente una parte de un fichero, escriba: #,#w! [nombre_archivo]
+	  donde #,# es el intervalo de lineas del archivo que se quiere guardar, lo que esta fuera de este intervalo 
+	  no se guarda.
+
+22. Insertar lo que guarde en Buffer a otro archivo:
+	- r [nombre_archivo]
+	- con la "r" seguido del nombre del archivo que guarde en el punto anterior (21) puedo insertar lo que guarde en buffer.
+	- sirve para hacer copias de seciones de codigo o tambien para copiar archivos completos.
+	- Tambien se pueden combinar archivos. (mezclar el codigo)
+
+24. Pulse R mayuscula para sustituir mas de un caraceter.
+
+25. Colorear palabras buscadas:
+	- /[patron]
+	  presionando la letra "n" se van recorriendo palabra x palabra encontrada.
+	- se puede romper el patron para que encuentra coincidencias similares mediantei    :set ic
+	- colorear patrones encontrados    :set hlsearch   o tambien   :set hls
+	- colorear las coincidencias mientras de tipea un patron de busqueda	:set incsearch     o tambien     :set is
+	- Para desactivar   :nohlsearch    y 	:noincsearch
+
+26. Comentar varias lineas de codigo:
+	- linea_A,linea_Bs/^/#        ejemplo:  6,50s/^/#
+
+27. Descomentar varias lineas de codigo:
+	- linea_A,linea_Bs/^#/	      ejemplo:  6,50s/^#/
+
+28. Eliminar un intervalo de lineas de codigo:
+	- [linea_A,linea_B]d	      ejemplo: 12,105d
+
+29. Resaltar línea de cursos (Horizonal-Vertical):
+	- horizontal: :set cursorline | nocursorline
+	- vertical: :set cursorcolumn | nocursorcolumn
+
+30. Copy y Paste:
+	- 10,50y    "Copiar desde línea 10 hasta 50"
+	- 1,20 co . "Copiar todo el rango 1-20 y pegarlo en la posicion actual del cursor"
+	- 
+	- 34,48d    "Cortar rango 14-48"		
+###END

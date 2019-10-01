@@ -1,0 +1,128 @@
+MOVIMIENTOS BASICOS:
+izquierda: h
+derecha : l
+arriba : k
+abajo: j
+-------------------------------------------------------------------------------------
+inicio de línea: 0
+fin de línea: $
+-------------------------------------------------------------------------------------
+avance por palabras : w
+retroceso por palabras : b
+-------------------------------------------------------------------------------------
+final de una palabra: e
+-------------------------------------------------------------------------------------
+secuencia de palabras separadas por puntos:
+
+inicio : B
+
+final : E
+
+-------------------------------------------------------------------------------------
+Cortar y Copiar
+
+Debemos colocarnos en la primera línea que contiene el texto que nos interesa y pulsar
+
+el número de líneas a utilizar y
+si queremos copiarlas (yy) o cortarlas (dd)
+Así tenemos que pulsar (todo seguido):
+
+3yy copia 3 líneas contando aquella en la que nos encontramos.
+10dd corta 10 líneas a partir de la actual.
+-------------------------------------------------------------------------------------
+Pegar
+
+Una vez realizado el paso anterior sólo tenemos que situarnos donde queremos colocar el texto que hemos copiado (o cortado) y pulsar
+
+p si queremos pegar DEBAJO de la línea actual.
+P para pegar ENCIMA de la línea en la que nos encontramos.
+-------------------------------------------------------------------------------------
+buscar una letra a partir desde donde estoy parado: f<letra>
+
+borrar una linea completa: dd
+borrar 5 lineas hacia arriba: d5k
+borrar 5 lineas hacia abajo: d5j
+borrar solo una palabra: dw
+Deshacer cambios: u
+Rehacer nuevamente: ctrl+r
+-------------------------------------------------------------------------------------
+INSERCION:
+insertar al inicio de la linea: I
+insertar al final de la linea: A
+insertar a la derecha : a
+insertar a la izquierda : i
+insertar abajo: o
+insertar arriba: O
+-------------------------------------------------------------------------------------
+NAVEGACION POR EL DOCUMENTO:
+ir al principio: gg
+ir al final: G
+ir a linea deseada : 57g     otra forma tbn es :50 , (dos puntos y el numero de linea)
+mover el documento hacia abajo ctr+F
+mover el documento hacia arriba ctrl+B
+marcado para luego poder volver a esa linea: m<nombre_de_linea>
+volver a la linea marcada : '<nombre_de_linea>
+memoria de recorrido : '. me lleva a la última línea que modifiqué
+						g; me lleva a la "ante última" y asi sucesivamente g; nos va llevando por todas las líneas del programa donde editamos.
+
+			`. me lleva a la linea-columna exacta donde hice la ultma edicion.
+
+MARCAS: 
+:ma <a-z> deja una marca en algun punto del documento. Luego, para volver a ese punto hay que ingresar 'a (vuelva ala linea) o bien `. vuelve al punto linea-columna.
+borado de marcas, :delmarks a     (borra la marca a)
+		  :delmarks a-d   (borra las marcas a,b,c,d)
+		  :delmarks aA    (borra las marca a y la marca global A)
+	          :delmarks!      (borra borra todas las marcas (a-z) del buffer)
+-------------------------------------------------------------------------------------
+INSERTAR TEXT REPETITIVO:
+insertar 10 veces la palabra "hola": 10ihola
+insertar verticalmente el simbolo de comentario "#" 10 veces: 10o#
+insertar sin entrar en modo de insercion: r<letra>
+cambiar una palabra: cw
+cambiar hasta el final a partir de donde estoy : c$
+cambiar hacia el inicio a partir de donde estoy : c0
+cambiar todo lo que esta adentro de (...) {...} : ci{  o bien ci(
+insertar texto en mayúscula : gUw
+
+-------------------------------------------------------------------------------------
+reperir la ultima accion realizada: .
+
+-------------------------------------------------------------------------------------
+BUSCAR CADENAS DE TEXTO DENTRO DEL ARCHIVO:
+buscar una cadena : /<una cadena>
+recorrer todas las encontradas desde arriba hacia abajo : n
+recorrer todas las encontradas desde abajo hacia arriba : N
+buscar coincidencias con la palabra donde esta el cursos actualmente : * 
+encontrar la e-nesima ocurrencia de alguna palabra : 10/palabra
+para marcar con color las cadenas halladas : 
+":set hlsearch"
+":nohlsearch"
+":set nohlsearch"
+---------------------------------------------------------------------------------------
+COMENTAR VARIAS LINEAS A LA VEZ:
+
+1. ctrl+v
+2. ":s/^/#"
+---------------------------------------------------------------------------------------
+REFRESCAR UN ARCHIVO VIM:
+:e o tambien :edit
+:e! o tambien :edit! refresca y no gusrda los cambios, se elimina todo lo que no se guardo
+
+---------------------------------------------------------------------------------------
+EDITAR EN UN NUEVO ARCHIVO:
+:edit /home/.../file.py
+otra forma es: 
+:new /path/.../newfile.py
+---------------------------------------------------------------------------------------
+MODOS DE GUARDAR CAMBIOS Y SALIR: 
+
+1. guardar cambios en el archivo actual :w
+2. guardar cambios en todos los archivos abiertos :wall
+3. guardar cambios en el archivo actual y salir :wq!
+4. cerrar archivo actual sin guardar nada :q!
+5. cerrar todo sin guardar nada: qall!
+6. cerrar todo salvando todos los cambios en todos los archivos :wqall
+
+
+
+

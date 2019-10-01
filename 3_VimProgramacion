@@ -1,0 +1,32 @@
+Seleccionar todo: 
+ggVG
+
+Guardar con otro nombre
+:w archivo
+
+Dividir pantalla horizontalmente
+:split
+
+Dividir pantalla verticalmente
+:vsplit
+
+Crear nueva pantalla dividida
+:new
+
+Salir cerrando todos los ficheros abiertos
+:qa
+
+buscar una letra a partir desde donde estoy parado
+:f<letra>
+
+COMANDOS PARA BORRAR:
+
+dw: borra hasta el final de una palabra
+d$: borra hasta el final de una linea
+4dw: borra las 4 proximas palabras. se pone un numero adelante que indica la cantidad de palabras a borrar
+dd: borra una linea completa
+2dd: borra dos lineas seguidas, se combina [numero]+comando+objeto
+u: deshacer acciones anteriores, similar a ctrl+z
+U: volver una linea a sus estado original antes de que haya sido modificada.
+ctrl+R: deshacer lo deshecho
+

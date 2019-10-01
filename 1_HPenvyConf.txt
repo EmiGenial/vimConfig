@@ -1,0 +1,74 @@
+Configuracion Inicial HP-Envy 17
+--------------------------------
+
+1. Descargar Firmware de placa wifi Realtek:
+
+Firmware: rtlwifi/rtl8188efw.bin
+	  rtl_nic/rtl8168g-2.fw
+
+Descargar: https://packages.debian.org/jessie/all/firmware-realtek/download
+
+Archivo: firmware-realtek_0.43_all.deb
+
+drivers: https://packages.debian.org/jessie/kernel/firmware-realtek
+
+NOTA: una vez descargado el archivo se puede instalar manualmente o bien se puede pegar
+dentro de la carpeta firmware del pendrive booteable de instalacion de Debian para que
+se instale automaticamente cuando se instale debian. 
+
+---------------------------------------------------------------------------------------------
+2. Activar usuario con privilegios (sudoers):
+
+-Intalar sudo:
+	#apt-get install sudo gksu
+
+-Agregar a tu usuario a la lista del archivo /etc/sudoers:
+	#nano /etc/sudoers
+
+- Agregar en el archivo la linea:
+	[username] ALL=(ALL) ALL
+
+---------------------------------------------------------------------------------------------
+3. Activar sonido BeatsAudio:
+
+Dispoitivo: IDT 92HD91BXX
+
+	$sudo apt-get install alsa-tools-gui
+
+Abrir: HDAJackRetask
+
+Activar:
+	0x0d / "Internal Speaker"	/ front side speaker
+	0x0f / "Internal Speaker"	/ under-display speaker
+	0x10 / "Internal Speaker(LFE)"  / subwoofer
+
+---------------------------------------------------------------------------------------------
+4. Eliminar el sonido beep horrible que viene por defecto en Gnome:
+
+Para quitar el molesto BEEP de Debian Wheezy, debemos de hacer lo siguiente.
+Entramos a la consola y escribimos lo siguiente:
+	$sudo nano /etc/inputrc
+
+Ahora quitamos el comentario (#) donde dice lo siguiente:
+	#set bell-style none
+
+Por último, lo guardamos (Control + o), y luego lo cerramos (Control + x).
+Volvemos a escribir en la consola:
+	$sudo modprobe -r pcspkr
+
+----------------------------------------------------------------------------------------------
+5. Intalar tema preferido:
+	
+	$sudo apt-get install Shiki-Brave-theme
+
+----------------------------------------------------------------------------------------------
+6. Letras favoritas para la consola de comandos:
+
+	$sudo apt-get install ttf-inconsolata 
+	$sudo apt-get install xfonts-terminus 
+----------------------------------------------------------------------------------------------
+7 Editor bpython
+	$sudo apt-get install bpython
+
+
+

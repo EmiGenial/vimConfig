@@ -122,7 +122,10 @@ MODOS DE GUARDAR CAMBIOS Y SALIR:
 4. cerrar archivo actual sin guardar nada :q!
 5. cerrar todo sin guardar nada: qall!
 6. cerrar todo salvando todos los cambios en todos los archivos :wqall
-
+---------------------------------------------------------------------------------------
+NERDTreeToogle:
+1. Menu de acciones  :m
+2. Agregar nuevo archivo  :ma
 
 
 
